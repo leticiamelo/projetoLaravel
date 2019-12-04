@@ -8,14 +8,15 @@
 
 @section('conteudo')
 
-<h3>Novo Cliente</h3>
+<h3>Produtos</h3>
 
-<form action="{{ route ('clientes.update', $cliente['id']) }}" method="POST">
+<ul>
+	<li>PC</li>
+	<li>Notebook</li>
+	<li>Mouse</li>
+	<li>Camiseta Polo</li>
+</ul>
 
-	@csrf
-	@method('PUT')
-	<input type="text" name="nome" value="{{$cliente['nome']}}">
-	<input type="submit" name="Salvar">
-</form>
+
 
 @endsection

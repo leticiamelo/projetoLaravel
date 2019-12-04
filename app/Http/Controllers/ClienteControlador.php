@@ -1,5 +1,7 @@
 <?php
 
+
+//Para criar um controlador com as funções automaticamente o comando é: "php artisan make:controller NomeControlador --resource"
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
@@ -31,8 +33,28 @@ class ClienteControlador extends Controller
     public function index(){
 
       $clientes = session('clientes');
-      return view ('clientes.index', compact(['clientes']));
-    	
+      $titulo = "todos os clientes";
+
+      /*chamando a view e passando parametros por array associativo
+
+      return view ('clientes.index', 
+        ['clientes'=>$clientes, 'titulo'=>$titulo]);
+      */
+       
+       // Esse trecho e o de cima fazem a mesma coisa: passam parametros para a view utilizando array associativo.
+
+        return view ('clientes.index', compact(['clientes', 'titulo']));
+
+      
+     /*uma das maneiras de chamar view e passar parametros
+
+      //chamando a view e passando parametros para a view
+      return view ('clientes.index')
+      ->with('clientes', $clientes)
+      ->with('titulo', $titulo);
+      */
+
+        	
     }
 
      /**

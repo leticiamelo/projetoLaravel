@@ -115,10 +115,18 @@ Route::get('/rotacomregras/{nome}/{n}', function ($nome, $n) {
 
   });
 
-  Route::get('produtos', 'MeuControlador@produtos');
+  Route::get('produtos', function(){
+    return view('outras.produtos');
+  })->name('produtos');
+
+  Route::get('departamentos', function(){
+    return view('outras.departamentos');
+  })->name('departamentos');
+
   Route::get('nome', 'MeuControlador@getNome');
   Route::get('idade', 'MeuControlador@getIdade');
   Route::get('multiplicar/{n1}/{n2}', 'MeuControlador@multiplicar');
 
-
+//Para criar um controlador com as funções automaticamente o comando é: "php artisan make:controller NomeControlador --resource"
+//O comando resource abaixo associa todas as rotas e nomes de rotas automaticamente.
   Route::resource('clientes', 'ClienteControlador');
