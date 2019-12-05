@@ -1,8 +1,10 @@
 
+
 //atraves dessa notação estamos informando qual será o template que essa pagina view utilizará.
 
 @extends('layouts.principal')
 
+@section('titulo', 'Clientes - Novo')
 
 //a pagina index chamara um template pronto que esta no arquivo principal. blade.php
 

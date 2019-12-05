@@ -3,6 +3,8 @@
 
 @extends('layouts.principal')
 
+@section('titulo', 'Clientes - Edit')
+
 
 //a pagina index chamara um template pronto que esta no arquivo principal. blade.php
 

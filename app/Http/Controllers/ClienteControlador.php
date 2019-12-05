@@ -14,13 +14,13 @@ class ClienteControlador extends Controller
     ['id' => 2, 'nome' => 'Joao'],
     ['id' => 3, 'nome' => 'maria'],
     ['id' => 4, 'nome' => 'aline'],
-  ]
+  ];
 
   //a intenção com esse construtor é apenas guardar os dados no navegdor ja que na aula nao estamos utilizando bd.
   public function __construct (){
     $clientes = session('clientes');
     if(!isset($clientes))
-      session([ 'clientes => $this->clientes']);
+      session([ 'clientes' => $this->clientes]);
   }
 
   /**
@@ -142,9 +142,10 @@ class ClienteControlador extends Controller
       * @return \Illuminate\Http\Response
     */
     public function destroy($id){
+
       $clientes = session('clientes');
       $index = $this->getIndex($id, $clientes);
-      array_splice($clientes,, $index, 1);
+      array_splice($clientes, $index, 1);
       session(['clientes' =>$clientes]);
       return redirect()-> route('clientes.index');
     }
@@ -152,6 +153,6 @@ class ClienteControlador extends Controller
     private function getIndex($id, $clientes){
       $ids = array_column($clientes, 'id');
       $index = array_search($id, $ids);
-      return index;
+      return $index;
     }
 }

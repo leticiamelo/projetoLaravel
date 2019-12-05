@@ -3,6 +3,8 @@
 
 @extends('layouts.principal')
 
+//essa section esta responsavel pelo nome que fica no icone do navegador
+@section('titulo', 'Departamentos') 
 
 //a pagina index chamara um template pronto que esta no arquivo principal. blade.php
 
