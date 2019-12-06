@@ -19,6 +19,32 @@
 	<li>Roupas</li>
 </ul>
 
+//para usar componentes, utilize a notação @component. Foi substituido pelo @alerta
+
+// @alerta foi criado no boot do AppServiceProvider
+
+//passando parametros para o componente alerta. tipo esta recebendo a informaçaõ de info do css principal.css.
+
+@alerta(['titulo'=> 'Erro Fatal', 'tipo'=> 'info'])
+<p><strong>Erro inesperado</strong></p>
+<p>Ocorreu um erro inesperado</p>
+@endalerta
+
+@alerta(['titulo'=> 'Erro Fatal', 'tipo'=> 'error'])
+<p><strong>Erro inesperado</strong></p>
+<p>Ocorreu um erro inesperado</p>
+@endalerta
+
+@alerta(['titulo'=> 'Erro Fatal', 'tipo'=> 'success'])
+<p><strong>Erro inesperado</strong></p>
+<p>Ocorreu um erro inesperado</p>
+@endalerta
+
+@alerta(['titulo'=> 'Erro Fatal', 'tipo'=> 'warning'])
+<p><strong>Erro inesperado</strong></p>
+<p>Ocorreu um erro inesperado</p>
+@endalerta
+
 
 
 @endsection
