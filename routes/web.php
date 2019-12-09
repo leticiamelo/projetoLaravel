@@ -130,3 +130,7 @@ Route::get('/rotacomregras/{nome}/{n}', function ($nome, $n) {
 //Para criar um controlador com as funções automaticamente o comando é: "php artisan make:controller NomeControlador --resource"
 //O comando resource abaixo associa todas as rotas e nomes de rotas automaticamente.
   Route::resource('clientes', 'ClienteControlador');
+
+  Route::get('opcoes/{opcao?}', function($opcao=null){
+    return view('outras.opcoes', compact(['opcao']));
+  })->name('opcoes');
